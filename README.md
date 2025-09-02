@@ -36,55 +36,56 @@ This is invaluable for debugging, monitoring costs, and evaluating the quality o
 **Step 1: Set up Environment Variables**
 
 Create a .env file in the backend directory and add your keys:
+```bash
+# backend/.env
 
-\# backend/.env
+# Get from your Langfuse project settings  
+LANGFUSE_SECRET_KEY="sk-lf-..."  
+LANGFUSE_PUBLIC_KEY="pk-lf-..."  
+LANGFUSE_HOST="" # Or your self-hosted instance
 
-\# Get from your Langfuse project settings  
-LANGFUSE\_SECRET\_KEY="sk-lf-..."  
-LANGFUSE\_PUBLIC\_KEY="pk-lf-..."  
-LANGFUSE\_HOST="\[https://cloud.langfuse.com\](https://cloud.langfuse.com)" \# Or your self-hosted instance
-
-\# Get from Google AI Studio  
-GEMINI\_API\_KEY="..."
-
+# Get from Google AI Studio  
+GEMINI_API_KEY="..."
+```
 **Step 2: Backend Setup**
-
-\# Navigate to the backend directory  
+```bash
+# Navigate to the backend directory  
 cd backend
 
-\# Create a virtual environment (recommended)  
-python \-m venv venv  
-source venv/bin/activate  \# On Windows, use \`venv\\Scripts\\activate\`
+# Create a virtual environment (recommended)  
+python -m venv venv  
+source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
 
-\# Install dependencies  
-pip install \-r requirements.txt
+# Install dependencies  
+pip install -r requirements.txt
 
-\# Run the Flask server  
+# Run the Flask server  
 flask run
-
+```
 The backend will be running at http://127.0.0.1:5000.
 
 **Step 3: Frontend Setup**
 
-\# Open a new terminal and navigate to the project root  
-\# Create a new Vite project called 'frontend'  
-npm create vite@latest frontend \-- \--template react
+# Open a new terminal and navigate to the project root 
+```bash 
+# Create a new Vite project called 'frontend'  
+npm create vite@latest frontend -- --template react
 
-\# Navigate into the new frontend directory  
+# Navigate into the new frontend directory  
 cd frontend
 
-\# Install dependencies  
+# Install dependencies  
 npm install
 
-\# (IMPORTANT) Replace the content of \`src/App.jsx\` with the code provided in the App.jsx file.  
-\# Also, install Tailwind CSS for styling  
-npm install \-D tailwindcss postcss autoprefixer  
-npx tailwindcss init \-p
+# (IMPORTANT) Replace the content of \`src/App.jsx\` with the code provided in the App.jsx file.  
+# Also, install Tailwind CSS for styling  
+npm install -D tailwindcss postcss autoprefixer  
+npx tailwindcss init -p
 
-\# Configure tailwind.config.js by adding "./src/\*\*/\*.{js,ts,jsx,tsx}" to the content array.  
-\# Add the tailwind directives to your src/index.css file.
+# Configure tailwind.config.js by adding "./src/\*\*/\*.{js,ts,jsx,tsx}" to the content array.  
+# Add the tailwind directives to your src/index.css file.
 
-\# Start the development server  
+# Start the development server  
 npm run dev
-
+```
 The frontend will be running at http://localhost:5173. Open this URL in your browser to use the app.
